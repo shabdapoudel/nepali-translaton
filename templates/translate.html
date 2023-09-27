@@ -5,33 +5,47 @@
 			<option{%if type=="ne_en"%} selected{%endif%} value="ne-en">Nepali-English</option>
 			<option{%if type=="en_ne"%} selected{%endif%} value="en-ne">English-Nepali</option>
 		</select>
-		<div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4">
-				<div class="gird grid-cols-1 lg:grid-cols-2 gap-4">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 					<div>
-					<h1>BLEU</h1>
-					<p>100</p>
+						<h1>BLEU</h1>
+						<div class="flex flex-wrap gap-4">
+							<div>
+								<h2>
+									Legal
+								</h2>
+								{%if type=="ne_en"%}
+								{{"nepali"}}
+							{%else%}
+								{{"english"}}
+							{%endif%}
+							</div>
+							<div>
+								<h2>
+									General
+									{%if type=="ne_en"%}
+								{{"nepali"}}
+							{%else%}
+								{{"english"}}
+							{%endif%}
+								</h2>
+							</div>
+						</div>
 					</div>
 					<div>
 						<h1>CharF++</h1>
-						<p>100</p>
+						<p>
+							{%if type=="ne_en"%}
+								{{"nepali"}}
+							{%else%}
+								{{"english"}}
+							{%endif%}
+						</p>
 					</div>
 				</div>
-
-				<div class="gird grid-cols-1 lg:grid-cols-2 gap-4">
-					<div>
-					<h1>BLEU</h1>
-					<p>100</p>
-					</div>
-					<div>
-						<h1>CharF++</h1>
-						<p>100</p>
-					</div>
-				</div>
-		</div>
 		<!--{%if type=="en_ne"%}<button class="text" id="listen">Use Speech-to-Text</button><img id="loader" src="{{url_for('static', filename="810.gif" )}}"/>{%endif%}-->
 		<div id="container" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-			<textarea class="transbox rounded-2xl border p-4 h-96" id="srclang" placeholder="Enter text" autofocus></textarea>
-			<textarea class="transbox  rounded-2xl border p-4 h-96" id="targetlang" readonly></textarea>
+			<textarea class="transbox rounded-2xl border p-4 h-72" id="srclang" placeholder="Enter text" autofocus></textarea>
+			<textarea class="transbox  rounded-2xl border p-4 h-72" id="targetlang" readonly></textarea>
 			<button class="text hidden bg-blue-700 hover:bg-blue-800 rounded-full py-2 px-4" id="save">Translated</button>
 			<!-- <div class="bottom-tool"><a href="/saved" target="_blank"><button class="text hidden">Saved Translations</button></a> -->
 		<!--<a href="/history" target="_blank"><button class="text">History</button></a><button class="text">Rate us</button></div>-->
