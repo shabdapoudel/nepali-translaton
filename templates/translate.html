@@ -5,34 +5,38 @@
 			<option{%if type=="ne_en"%} selected{%endif%} value="ne-en">Nepali-English</option>
 			<option{%if type=="en_ne"%} selected{%endif%} value="en-ne">English-Nepali</option>
 		</select>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
 					<div>
-						<h1>BLEU</h1>
+						<h1 class="bg-primary-50 rounded-2xl px-4 py-2">BLEU</h1>
 						<div class="flex flex-wrap gap-4">
 							<div>
-								<h2>
+								<h2 class="font-bold">
 									Legal
 								</h2>
-								{%if type=="ne_en"%}
-								{{"nepali"}}
-							{%else%}
-								{{"english"}}
-							{%endif%}
-							</div>
-							<div>
-								<h2>
-									General
+								<p>
 									{%if type=="ne_en"%}
 								{{"nepali"}}
 							{%else%}
 								{{"english"}}
 							{%endif%}
+								</p>
+							</div>
+							<div>
+								<h2 class="font-bold">
+									General
 								</h2>
+								<p>
+									{%if type=="ne_en"%}
+								{{"nepali"}}
+							{%else%}
+								{{"english"}}
+							{%endif%}
+								</p>
 							</div>
 						</div>
 					</div>
 					<div>
-						<h1>CharF++</h1>
+						<h1 class="bg-primary-50 rounded-2xl px-4 py-2">CharF++</h1>
 						<p>
 							{%if type=="ne_en"%}
 								{{"nepali"}}
