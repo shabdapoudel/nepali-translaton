@@ -1,14 +1,14 @@
 {% extends 'layout.html' %}
 {% block text %}
 	<div id="cnt-bg" class="container mx-auto">
-		<select class="langselect" onchange="location = this.value;">
+		<select class="langselect py-4 px-6 rounded-2xl" onchange="location = this.value;">
 			<option{%if type=="ne_en"%} selected{%endif%} value="ne-en">Nepali-English</option>
 			<option{%if type=="en_ne"%} selected{%endif%} value="en-ne">English-Nepali</option>
 		</select>
 		<!--{%if type=="en_ne"%}<button class="text" id="listen">Use Speech-to-Text</button><img id="loader" src="{{url_for('static', filename="810.gif" )}}"/>{%endif%}-->
-		<div id="container" class="grid grid-cols-1 lg:grid-cols-2 h-[100vh]">
-			<textarea class="transbox rounded-2xl border" id="srclang" placeholder="Enter text" autofocus></textarea>
-			<textarea class="transbox  rounded-2xl border" id="targetlang" readonly></textarea>
+		<div id="container" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+			<textarea class="transbox rounded-2xl border p-4" id="srclang" placeholder="Enter text" autofocus></textarea>
+			<textarea class="transbox  rounded-2xl border p-4" id="targetlang" readonly></textarea>
 			<button class="text hidden bg-blue-700 hover:bg-blue-800 rounded-full py-2 px-4" id="save">Translated</button>
 			<!-- <div class="bottom-tool"><a href="/saved" target="_blank"><button class="text hidden">Saved Translations</button></a> -->
 		<!--<a href="/history" target="_blank"><button class="text">History</button></a><button class="text">Rate us</button></div>-->
